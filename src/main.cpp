@@ -4,7 +4,7 @@
 
 struct Component
 {
-    int eid = 0;
+    int eid = 10;
 };
 
 struct MyCmp : Component
