@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include <concepts>
 
 struct Component
@@ -8,7 +9,6 @@ struct Component
 
 struct MyCmp : Component
 {
-    /* data */
 };
 
 template <class T>
@@ -21,7 +21,7 @@ void print_cmp(Component *cmp)
 
 int main(int argc, char const *argv[])
 {
-    MyCmp my_cmp;
-    print_cmp<MyCmp>(&my_cmp);
+    //MyCmp my_cmp;
+    //print_cmp<MyCmp>(&my_cmp);
     return 0;
 }
