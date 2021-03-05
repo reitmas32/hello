@@ -31,7 +31,7 @@ jobs:
         submodule_update: ON
         run_tests: ON
         unit_test_build: -DFIND_TESTS=ON
-        cmake_args: -DFIND_MODULES=ON;-DENABLE_TIDY=ON; -DCMAKE_CXX_COMPILER=clang++
+        cmake_args: -DFIND_MODULES=ON;-DENABLE_TIDY=ON;-DCMAKE_CXX_COMPILER=${{ runner.temp }}/llvm/clang++
     - name: Make-App
       run: cd build && make
     - name: Run-App
