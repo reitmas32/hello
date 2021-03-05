@@ -27,6 +27,8 @@ jobs:
         cmake_args: -DFIND_MODULES=ON;-DENABLE_TIDY=ON
     - name: Make-App
       run: cd build && make
+    - name: Run-App
+      run: ./build/hello
 #name: C/C++ CI
 #
 #on: [push]
