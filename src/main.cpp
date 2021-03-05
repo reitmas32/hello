@@ -1,5 +1,5 @@
 #include <iostream>
-
+/*
 #include <concepts>
 
 struct Component
@@ -18,7 +18,7 @@ void print_cmp(Component *cmp)
     std::cout << cmp->eid << '\n';
     return;
 }
-
+*/
 int main(int argc, char const *argv[])
 {
     //MyCmp my_cmp;
