@@ -17,6 +17,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2.0.0
+    - name: Install LLVM and Clang
+      uses: KyleMayes/install-llvm-action@v1
+      with:
+        version: "10.0"
+        directory: ${{ runner.temp }}/llvm
+    - name: Test Clang
+      run: clang++ --version  
     - name: Build project
       uses: nicledomaS/cmake_build_action@v1.3
       with:
@@ -24,7 +31,7 @@ jobs:
         submodule_update: ON
         run_tests: ON
         unit_test_build: -DFIND_TESTS=ON
-        cmake_args: -DFIND_MODULES=ON;-DENABLE_TIDY=ON
+        cmake_args: -DFIND_MODULES=ON;-DENABLE_TIDY=ON; -DCMAKE_CXX_COMPILER=clang++
     - name: Make-App
       run: cd build && make
     - name: Run-App
