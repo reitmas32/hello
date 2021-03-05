@@ -25,7 +25,6 @@ jobs:
         run_tests: ON
         unit_test_build: -DFIND_TESTS=ON
         cmake_args: -DFIND_MODULES=ON;-DENABLE_TIDY=ON
-        create_package: ON
 #name: C/C++ CI
 #
 #on: [push]
