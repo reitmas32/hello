@@ -26,7 +26,7 @@ jobs:
         unit_test_build: -DFIND_TESTS=ON
         cmake_args: -DFIND_MODULES=ON;-DENABLE_TIDY=ON
     - name: Make-App
-      run: cd build && make build
+      run: cd build && make
 #name: C/C++ CI
 #
 #on: [push]
