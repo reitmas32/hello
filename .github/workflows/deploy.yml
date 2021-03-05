@@ -3,7 +3,7 @@ name: C/C++ CI
 on: [push]
 
 jobs:
-  build:
+  example:
     runs-on: ubuntu-latest
     steps:
     - name: Setup cmake
@@ -12,3 +12,13 @@ jobs:
         cmake-version: '3.16.x'
     - name: Use cmake
       run: cmake --version
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup cmake
+      uses: jwlawson/actions-setup-cmake@v1.8
+      with:
+        cmake-version: '3.16.x'
+    - name: Build with Cmake
+      run: mkdir build/Release && cmake ../.. -G "Ninja"
