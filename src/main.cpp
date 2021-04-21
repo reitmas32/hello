@@ -1,27 +1,33 @@
+//  src/main.cpp
+
 #include <iostream>
 
-#include <concepts>
+//Info Platform
+#include <Moon/include/tools/platform_info.hpp>
 
-struct Component
+//Component
+#include <Moon/template/core/cmp/cmp.tpp>
+
+//MyComponent
+struct MyCmp_t : Moon::Core::Component_t<MyCmp_t>
 {
-    int eid = 0;
+    //data of Component
+    int data;
+
+    //Constructors
+    MyCmp_t(Moon::Alias::EntityId eid) : Moon::Core::Component_t<MyCmp_t>(eid) {}
+    MyCmp_t(
+        Moon::Alias::EntityId eid,
+        int data) : Moon::Core::Component_t<MyCmp_t>(eid), data{data}{}
+    MyCmp_t() = default;
+
+    //Destructors
+    ~MyCmp_t() = default;   
 };
-
-struct MyCmp : Component
-{
-};
-
-template <class T>
-requires std::is_base_of<Component, T>::value 
-void print_cmp(Component *cmp)
-{
-    std::cout << cmp->eid << '\n';
-    return;
-}
 
 int main(int argc, char const *argv[])
 {
-    MyCmp my_cmp;
-    print_cmp<MyCmp>(&my_cmp);
+    MyCmp_t cmp = MyCmp_t(0, 45); // eid = 0, data = 45
+    std::cout << "MyCmp_t eid: "<<cmp.eid<<", data: " << cmp.data << std::endl;
     return 0;
 }

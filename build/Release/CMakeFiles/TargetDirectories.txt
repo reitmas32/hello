@@ -1,3 +1,0 @@
-/home/rafa/projects/hello/build/Release/CMakeFiles/rebuild_cache.dir
-/home/rafa/projects/hello/build/Release/CMakeFiles/hello.dir
-/home/rafa/projects/hello/build/Release/CMakeFiles/edit_cache.dir
